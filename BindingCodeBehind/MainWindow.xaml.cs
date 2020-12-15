@@ -27,10 +27,12 @@ namespace BindingCodeBehind
         private void addTextBox_Click(object sender, RoutedEventArgs e)
         {
             TextBox newTextBlock = new TextBox();
+            newTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
             newTextBlock.Text="just added";
             
             
             newTextBlock.SetBinding(TextBox.TextProperty, new Binding("Testo") { Source = DataContext as MainWindowViewModel });
+            newTextBlock.SetBinding(TextBox.MarginProperty, new Binding("ActualWidth") { Source = newTextBlock });
             stackP.Children.Add(newTextBlock);
         }
     }
