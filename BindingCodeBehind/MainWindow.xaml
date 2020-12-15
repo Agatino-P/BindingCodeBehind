@@ -1,0 +1,23 @@
+﻿<Window
+    x:Class="BindingCodeBehind.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BindingCodeBehind"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <StackPanel x:Name="stackP">
+        <TextBlock Text="insert here" />
+        <TextBox Text="{Binding Testo, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Text="inserted " />
+        <TextBlock Text="{Binding Testo}" />
+        <Button x:Name="addTextBox" Content="AddTextBox" Click="addTextBox_Click"/>
+
+    </StackPanel>
+</Window>
